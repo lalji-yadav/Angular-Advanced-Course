@@ -1,0 +1,84 @@
+<div class="main">
+    <div class="content">
+
+      <form [formGroup]="profileForm">
+
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="abc" formControlName="firstName">
+            <mat-error>Enter valid name </mat-error>
+          </mat-form-field> <br>
+
+          <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="abc" formControlName="lastName" >
+            <mat-error>Enter valid last name </mat-error>
+          </mat-form-field> <br>
+   
+
+        <div formGroupName="address" style="border: 1px solid red;">
+            <h3>Address</h3>
+            
+            <mat-form-field>
+                <mat-label>Street:</mat-label>
+                <input matInput placeholder="abc" formControlName="street" >
+                <mat-error>Enter valid last name </mat-error>
+              </mat-form-field> <br>
+            <br>
+
+            <mat-form-field>
+                <mat-label> City:</mat-label>
+                <input matInput placeholder="abc" formControlName="city" >
+                <mat-error>Enter valid last name </mat-error>
+              </mat-form-field> <br>
+
+            <mat-form-field>
+                <mat-label> State: </mat-label>
+                <input matInput placeholder="abc" formControlName="state" >
+                <mat-error>Enter valid last name </mat-error>
+              </mat-form-field> <br>
+
+            <mat-form-field>
+                <mat-label>  Zip Code: </mat-label>
+                <input matInput placeholder="abc" formControlName="zip" >
+                <mat-error>Enter valid last name </mat-error>
+              </mat-form-field> <br>
+          </div>
+
+        <div formArrayName="arrayName" style="border: 1px solid green;">
+           
+            <div *ngFor="let alias of arrayNamee.controls; let i=index">
+              <!-- The repeated alias template -->
+              <div [formGroupName] = "i">
+
+                <mat-form-field>
+                    <mat-label>  Name: </mat-label>
+                    <input matInput placeholder="abc" formControlName="name" >
+                    <mat-error>Enter valid last name </mat-error>
+                  </mat-form-field> <br>
+
+                  <mat-form-field>
+                    <mat-label>  Email: </mat-label>
+                    <input matInput placeholder="abc" formControlName="email" >
+                    <mat-error>Enter valid last name </mat-error>
+                  </mat-form-field> <br>
+
+                  <mat-form-field>
+                    <mat-label>  Mobile: </mat-label>
+                    <input matInput placeholder="abc" formControlName="mob" >
+                    <mat-error>Enter valid last name </mat-error>
+                  </mat-form-field> <br>
+
+              </div>
+
+            </div>
+          </div>
+
+      </form>
+
+      <h3>Aliases</h3> <button (click)="addAlias()">Add Alias</button> &nbsp;
+
+      <button type="submit" (click)="onSubmit()"> Submit </button>
+     
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="row" appDirectiveDemo>
+  <div class="col-sm-8">
+    <h3> {{userName}}</h3>
+    <button (click)="onAlert()">Click</button> &nbsp;
+    <button (click)="changeColor('green')">green</button> &nbsp;
+    <button (click)="changeColor('blue')">blue</button> &nbsp;
+  </div>
+  <div class="col-sm-4">
+   <ng-content> </ng-content>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="main">
+    <div class="header">
+        <p>This is header!</p>
+   
+    </div>
+    <div class="img">
+        <table>
+          <div class="row">
+           <tr class="col" *ngFor="let obj of galleryImg">
+               <p style="width: 10%; margin: 0px; padding: 0px;">{{obj.id}}</p> <br>
+               <p style="width: 10%; margin: 0px; padding: 0px;">{{obj.title}}</p>
+               <!-- <p style="width: 10%; margin: 0px; padding: 0px;"> <button>
+                     </button>
+                </p> <br> --> 
+                    <a [routerLink]="[ '/secondModule/imgFile', obj.id]">
+                        <img class="imgsize" src="{{obj.imgUrl}}" alt="">
+                    </a>
+ 
+           </tr>
+          </div>
+        </table>
+   
+    </div>
+   </div>

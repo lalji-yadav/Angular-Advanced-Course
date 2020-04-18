@@ -1,0 +1,14 @@
+<div class="main">
+  <div class="btn-sucess">
+      <button (click)="myClick($event)">Abc</button>
+  </div>
+
+  <div class="show" *ngIf='show'>
+      <h1>show</h1>
+  </div>
+  <div class="hide" *ngIf='!show'>
+      <h1>hide</h1>
+  </div>
+
+  <button type="submit" (click)="toggle()" [ngStyle]="{'background-color': buttonColor}">{{text}}</button>
+</div>

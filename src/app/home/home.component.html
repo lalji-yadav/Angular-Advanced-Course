@@ -1,0 +1,29 @@
+
+<div class="text-center">
+
+    <h1>Welcome</h1>
+    <input type="text" placeholder="Enter Name" #add required > 
+
+    <div class="row">
+      <div class="col-sm-2">
+        <button class="btn-btn-primary" (click)="onAdd(add)">Add Data </button> <br>
+      </div>
+  
+      <div class="col-sm-2">
+        <button (click)="onDelete()">All Delete</button>
+      </div>
+  
+    </div>
+  </div>
+  
+  <table class="table">
+    <tr>
+      <th>
+        List
+      </th>
+    </tr>
+    <tr *ngFor="let obj of List let i=index">
+     <td>{{obj.name}}</td>
+     <td (click)="onDeletee(i)">Delete</td>
+    </tr>
+  </table>
